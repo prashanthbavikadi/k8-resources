@@ -1,8 +1,8 @@
-kind: Pod
+kind: CongigMap
 apiVersion: v1
 
 metadata:
-  name: configmap
+  name: jpaws10s
 data:
   course: "aws with devops"
   trainer: "prashanth"
