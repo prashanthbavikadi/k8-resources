@@ -1,12 +1,7 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: annotations
-  labels:
-    course: Kubernates
-    trainer: prashanth
-  annotations:
-    imageregistry: "https://hub.docker.com/"
+  name: environment
 spec:
   containers:
   - name: nginx
