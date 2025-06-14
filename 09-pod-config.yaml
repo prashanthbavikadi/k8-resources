@@ -1,0 +1,20 @@
+kind: Pod
+apiVersion: v1
+
+metadata:
+  name: pod-ConfigMap
+spec:
+  containers:
+    name: nginx
+    image: nginx
+    env:
+    - name: course
+      valueFrom:
+        configMapKeyRef:
+          name: jpaws10s
+          key: course
+    - name: trainer
+      valueFrom:
+        configMapKeyRef:
+          name: jpaws10s
+          key: trainer        
