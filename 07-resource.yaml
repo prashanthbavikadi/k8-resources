@@ -4,8 +4,8 @@ metadata:
   name: resources
 spec:
   containers:
-  - name: app
-    image: images.my-company.example/app:v4
+  - name: nginx
+    image: nginx
     resources:
       requests:
         memory: "64Mi"
