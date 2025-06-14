@@ -5,7 +5,7 @@ metadata:
   name: pod-ConfigMap
 spec:
   containers:
-    name: nginx
+  - name: nginx
     image: nginx
     env:
     - name: course
