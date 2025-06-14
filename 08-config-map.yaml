@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap
+data:
+  course: "aws with devops"
+  trainer: "prashanth"
+  github: "https://github.com/prashanthbavikadi/k8-eksctl"  
+
+
+
