@@ -1,0 +1,26 @@
+kind: Deployment
+apiVersion: v1
+metadata:
+  name: nginx-deployment
+
+  labels:
+    app: nginx
+    purpose: deployment
+    tier: web-frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+      tier: web-frontend
+  template:
+    metadata:
+      labels:
+        app: nginx 
+        tier: web-frontend
+        project: test-project
+        extra-key: extra-value   
+      spec:
+        containers:
+        - name: nginx
+          image: nginx     
