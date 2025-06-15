@@ -10,11 +10,12 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
       tier: frontend
+      app: nginx
   template:
     metadata:
       labels:
+      app: nginx
       tier: frontend
       project: amway
     spec:
