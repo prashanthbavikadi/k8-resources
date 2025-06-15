@@ -15,9 +15,9 @@ spec:
   template:
     metadata:
       labels:
-      app: nginx
-      tier: frontend
-      project: amway
+        app: nginx
+        tier: frontend
+        project: amway
     spec:
       containers:
       - name: nginx
