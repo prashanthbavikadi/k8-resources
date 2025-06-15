@@ -20,7 +20,7 @@ spec:
         tier: web-frontend
         project: test-project
         extra-key: extra-value   
-      spec:
-        containers:
-        - name: nginx
-          image: nginx     
+    spec:
+      containers:
+      - name: nginx
+        image: nginx     
