@@ -16,7 +16,7 @@ kind: Pod
 metadata:
   name: nginx-dynamic
   labels:
-    purpose: ebs-dynamic
+    purpose: ebs-static
     project: expense
 spec:
   containers:
