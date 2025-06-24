@@ -8,11 +8,13 @@ metadata:
 spec:
   # modify replicas according to your case
   replicas: 3
-  selector:
+  selector: # we select which pod we have to do replica whichnhas same details
     matchLabels:
       tier: frontend
       app: nginx
-  template:
+      #  below is pod defination
+  template:                    # pod is subset of replica set
+
     metadata:
       labels:
         app: nginx
