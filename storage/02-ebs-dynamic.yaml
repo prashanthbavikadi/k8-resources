@@ -1,7 +1,33 @@
 # Expense storage class
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
+apiVersion: v1
+kind: PersistentVolumeClaim
 metadata:
-  name: expense-ebs-sc
-provisioner: ebs.csi.aws.com
-volumeBindingMode: WaitForFirstConsumer
+  name: ebs-dynamic
+spec:
+  storageClassName: "expense-ebs-sc" # Empty string must be explicitly set otherwise default StorageClass will be set
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 8Gi
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-dynamic
+  labels:
+    purpose: ebs-dynamic
+    project: expense
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    volumeMounts:
+    - name: persistent-storage
+      mountPath: /usr/share/nginx/html
+  nodeSelector:
+    topology.kubernetes.io/zone: us-east-1b
+  volumes:
+  - name: persistent-storage
+    persistentVolumeClaim:
+      claimName: ebs-dynamic
