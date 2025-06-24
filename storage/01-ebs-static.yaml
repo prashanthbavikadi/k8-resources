@@ -14,7 +14,7 @@ spec:
     fsType: ext4
     volumeHandle: vol-0aa0b4c8af12572a6 # created volume 
 
-------
+
 # persistant volume cliam (PVC) equlivalent ebs storage inside K8 cluster 
 
 apiVersion: v1
@@ -29,8 +29,6 @@ spec:
   resources:
     requests:
       storage: 10Gi
-
-------
 
 # we have mention the claim and mention in pod 
 
@@ -55,7 +53,7 @@ spec:
       claimName: ebs-static
 
 
--------------
+#-------------
 
 apiVersion: v1
 kind: Service
