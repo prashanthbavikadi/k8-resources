@@ -17,18 +17,18 @@ spec:
 #  ------
 # persistant volume cliam (PVC) equlivalent ebs storage inside K8 cluster 
 
-# apiVersion: v1
-# kind: PersistentVolumeClaim
-# metadata:
-#   name: ebs-static
-# spec:
-#   storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
-#   volumeName: ebs-static
-#   accessModes:
-#     - ReadWriteOnce
-#   resources:
-#     requests:
-#       storage: 10Gi
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ebs-static
+spec:
+  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  volumeName: ebs-static
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
 
 #------
 
